@@ -5,16 +5,16 @@ const ProductSchema = new mongoose.Schema(
     {
         image: String,
         name: String,
-        proce: Number,
+        price: Number,
         stock: Number,
         sale: Number,
-        category: String,
+        category: { type: mongoose.Types.ObjectId, ref: 'Category' },
     },
     {
         collection: "products"
     }
 );
 
-const Products = mongoose.model("Products", ProductSchema, "products");
+const Product = mongoose.model("Products", ProductSchema, "products");
 
-export default Products;
+export default Product;
