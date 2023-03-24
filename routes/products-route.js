@@ -6,11 +6,6 @@ import uploadCloud from "../config/cloudinary-config.js";
 
 const productsRouter = express.Router();
 
-// productsRouter.post("/products", async (req, res) => {
-//     console.log("products router start");
-//     console.log("incoming request", req.body);
-// });
-
 //upload.single(the name given on frontend)
 // post request comes from /products --> take "prodImage" from inside req, multer, save it in uploads --> endpoint function
 productsRouter.post("/products", upload.single("prodImage"),
