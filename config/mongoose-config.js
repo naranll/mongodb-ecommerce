@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const ecommerce_connection = "mongodb+srv://nrll:0Bl4cKStaRrrR@cluster0.ylkhqbp.mongodb.net/ecommerce?retryWrites=true&w=majority";
+dotenv.config();
+
+const ecommerce_connection = process.env.MONGODB_CONNECTION_URL;
 
 mongoose.connect(ecommerce_connection);
 
