@@ -11,7 +11,7 @@ userRouter.post("/login", async (req, res) => {
 userRouter.post("/register", async (req, res) => {
     // console.log("pass", req.body.password);
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    console.log("hashedPass", hashedPassword);
+    // console.log("register hashedPass", hashedPassword);
 
     const newUser = new User({
         email: req.body.email,
